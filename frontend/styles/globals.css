@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black;
+  }
+}
+
+@layer utilities {
+  /* Some Delays for animations */
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Animating Gradient Background-Clip-Text  */
+  .gradient-css {
+    background: linear-gradient(
+      273deg,
+      #5ee2f7,
+      #f7ac79,
+      #f779e7,
+      #ff6666,
+      #cf66ff
+    );
+    background-size: 1000% 1000%;
+
+    background-size: 1000% 1000%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: GradientKeyFrame 12s ease infinite;
+    -moz-animation: GradientKeyFrame 12s ease infinite;
+    -o-animation: GradientKeyFrame 12s ease infinite;
+    animation: GradientKeyFrame 12s ease infinite;
+    animation-delay: 2s;
+  }
+
+  @-webkit-keyframes GradientKeyFrame {
+    0% {
+      background-position: 0% 48%;
+    }
+    50% {
+      background-position: 100% 53%;
+    }
+    100% {
+      background-position: 0% 48%;
+    }
+  }
+  @-moz-keyframes GradientKeyFrame {
+    0% {
+      background-position: 0% 48%;
+    }
+    50% {
+      background-position: 100% 53%;
+    }
+    100% {
+      background-position: 0% 48%;
+    }
+  }
+  @-o-keyframes GradientKeyFrame {
+    0% {
+      background-position: 0% 48%;
+    }
+    50% {
+      background-position: 100% 53%;
+    }
+    100% {
+      background-position: 0% 48%;
+    }
+  }
+  @keyframes GradientKeyFrame {
+    0% {
+      background-position: 0% 48%;
+    }
+    50% {
+      background-position: 100% 53%;
+    }
+    100% {
+      background-position: 0% 48%;
+    }
+  }
+
+  /* Mouse Scrolling animation */
+  .scrollwheel-down-css {
+    animation: ScrollWheelKeyFrame 1s linear infinite;
+  }
+  .scrollarrow-down-css {
+    animation: ScrollArrowKeyFrame 0.5s alternate infinite;
+  }
+  @keyframes ScrollWheelKeyFrame {
+    0% {
+      opacity: 0;
+      transform: translateY(-0.6rem);
+    }
+    100% {
+      opacity: 0.3;
+      transform: translateY(0.6rem);
+    }
+  }
+  @keyframes ScrollArrowKeyFrame {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    750% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
+}
