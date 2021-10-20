@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
 const FooterSection = () => {
   return (
-    <section className="h-screen  bg-[#1D1D1F] flex flex-col justify-center items-center">
+    <footer className="h-screen  bg-[#1D1D1F] flex flex-col justify-center items-center">
       <div className="h-full max-w-6xl flex flex-col justify-center items-center border-b   border-opacity-10 border-gray-200">
         <p className=" text-4xl md:text-5xl lg:text-8xl text-center font-semibold gradient-css ">
           Interested in working with me?
@@ -18,7 +18,7 @@ const FooterSection = () => {
           © 2021 Dip Sagun Gurung. All rights reserved.
         </p>
       </div>
-    </section>
+    </footer>
   );
 };
 

@@ -8,16 +8,14 @@ import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div className="font-jugo font-medium text-gray-200 ">
-      <div className="relative">
-        <Navbar />
-        <HeroSection />
-        <GradientText />
-        <BenefitSection />
-        <ProjectSection />
-        <AboutMeSection />
-        <FooterSection />
-      </div>
-    </div>
+    <main className="font-jugo font-medium text-gray-200 relative">
+      <Navbar />
+      <HeroSection />
+      <GradientText />
+      <BenefitSection />
+      <ProjectSection />
+      <AboutMeSection />
+      <FooterSection />
+    </main>
   );
 }
