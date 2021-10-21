@@ -39,7 +39,6 @@
     -moz-animation: GradientKeyFrame 12s ease infinite;
     -o-animation: GradientKeyFrame 12s ease infinite;
     animation: GradientKeyFrame 12s ease infinite;
-    animation-delay: 2s;
   }
 
   @-webkit-keyframes GradientKeyFrame {
@@ -129,5 +128,10 @@
   .disable-scrollbars {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE 10+ */
+  }
+
+  .pixel-pattern {
+    background-image: url("https://dipsagungurung.sfo3.digitaloceanspaces.com/Portfolio-Assets/Pixel-Pattern-cloud.png"),
+      linear-gradient(45deg, #16327c, #1ebf98);
   }
 }

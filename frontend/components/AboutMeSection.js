@@ -29,8 +29,9 @@ const AboutMeSection = () => {
               <div className="space-y-2 ">
                 <p className="text-xl opacity-80">
                   I am a full stack developer and I enjoy listening to lofi
-                  music while coding. I love setting up a business as it gives
-                  me ample opportunities to meet with new peoples.
+                  music while coding. I am fond of setting up a business as it
+                  gives me ample opportunities to meet with new peoples. I love
+                  dogs ❤.
                 </p>
                 <p className="text-xl opacity-80">
                   ✔ Workout:4-5 days a week. <br /> ✔ Coffee: Soft
@@ -43,7 +44,7 @@ const AboutMeSection = () => {
             <div className="relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-500 via-gray-400 to-gray-500 rounded- blur rounded-full h-72 w-72  lg:h-96 lg:w-96"></div>
               <div
-                className="bg-[#1D1D1F] rounded-full overflow-hidden relative h-72 w-72  lg:h-96 lg:w-96
+                className="bg-primary rounded-full overflow-hidden relative h-72 w-72  lg:h-96 lg:w-96
                 border-4  border-black
               "
               >

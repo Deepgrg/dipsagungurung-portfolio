@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <main className="font-jugo font-medium text-gray-200 relative">
+    <main className="font-jugo font-medium text-gray-200 relative custom-scrollbars">
       <Navbar />
       <HeroSection />
       <GradientText />

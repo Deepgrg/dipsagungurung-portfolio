@@ -23,43 +23,8 @@ module.exports = {
           "Noto Color Emoji",
         ],
       },
-      keyframes: {
-        blob: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-        },
-        blobHorizontal: {
-          "0%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-          "33%": {
-            transform: "translate(70px, -50px) scale(1.2)",
-          },
-          "66%": {
-            transform: "translate(-30px, 20px) scale(0.9)",
-          },
-          "100%": {
-            transform: "translate(0px, 0px) scale(1)",
-          },
-        },
-      },
-      animation: {
-        blob: "blob 7s infinite",
-        blobHorizontal: "blobHorizontal 8s infinite",
-      },
-      backgroundImage: {
-        "pixel-pattern":
-          "url('https://dipsagungurung.sfo3.digitaloceanspaces.com/Portfolio-Assets/Pixel-Pattern-cloud.png')",
+      colors: {
+        primary: "#1D1D1F",
       },
     },
   },

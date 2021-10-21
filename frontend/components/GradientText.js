@@ -1,7 +1,7 @@
 const GradientText = () => {
   return (
     <section
-      className="h-screen  bg-[#1D1D1F] flex justify-center items-center"
+      className="h-screen  bg-primary flex justify-center items-center"
       id="SectionOnePointFive"
     >
       <div className="h-full max-w-6xl flex justify-center items-center border-t   border-opacity-10 border-gray-200">

@@ -1,5 +1,4 @@
 import ProjectCard from "./ProjectCard";
-import { useState } from "react";
 
 const ProjectSection = () => {
   const projects = [
@@ -14,10 +13,8 @@ const ProjectSection = () => {
     },
   ];
 
-  const projectsJSX = projects.map((current, index) => {});
-
   return (
-    <section className="bg-[#1D1D1F] flex justify-center" id="ProjectSection">
+    <section className="bg-primary flex justify-center" id="ProjectSection">
       <div className="max-w-7xl w-full  flex flex-col items-center py-9 px-3 md:px-6 lg:px-3">
         {/* Section Header */}
         <div className="w-full max-w-6xl flex items-center my-8">
