@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useFormik } from "formik";
+import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
@@ -8,16 +7,31 @@ import OnBoardingTwo from "../components/OnBoardingTwo";
 import OnBoardingThree from "../components/OnBoardingThree";
 
 const Contact = () => {
+  const [data, setData] = useState({
+    services: [],
+    methods: [],
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
   const [page, setPage] = useState(1);
 
+  useEffect(() => {
+    console.log(data);
+  });
+
+  // For Controlling the page
   const previousPage = () => {
-    if (page == 1) return;
+    if (page === 1) return;
     setPage((prev) => prev - 1);
   };
   const nextPage = () => {
-    if (page == 3) return;
+    console.log("Next page clicked");
+    if (page === 4) return;
     setPage((prev) => prev + 1);
   };
+
+  // For controlling the form state
 
   return (
     <div className="font-jugo font-medium text-gray-200 h-screen w-full bg-primary flex items-center justify-center">
@@ -47,14 +61,17 @@ const Contact = () => {
 
         {/* Contact Body */}
         <div className="h-full w-full flex items-center justify-center">
-          {page === 1 && <OnBoardingOne />}
-          {page === 2 && <OnBoardingTwo />}
+          {page === 1 && (
+            <OnBoardingOne data={data} setData={setData} nextPage={nextPage} />
+          )}
+          {page === 2 && (
+            <OnBoardingTwo data={data} setData={setData} nextPage={nextPage} />
+          )}
           {page === 3 && <OnBoardingThree />}
-          {/* <OnBoardingTwo /> */}
         </div>
 
         {/* Contact Footer */}
-        <div className="absolute bottom-0 left-0  pt-4 pb-8 w-full flex items-center justify-center ">
+        {/* <div className="absolute bottom-0 left-0  pt-4 pb-8 w-full flex items-center justify-center ">
           {page === 3 && (
             <button
               className="flex items-center px-16  py-2
@@ -73,7 +90,7 @@ const Contact = () => {
               Next
             </button>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
