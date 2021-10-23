@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import Link from "next/link";
+import emailjs from "emailjs-com";
 
 import OnBoardingOne from "../components/OnBoardingOne";
 import OnBoardingTwo from "../components/OnBoardingTwo";
@@ -10,14 +13,30 @@ const Contact = () => {
   const [data, setData] = useState({
     services: [],
     methods: [],
-    firstName: "",
-    lastName: "",
-    email: "",
   });
+
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    console.log(data);
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+    },
+
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+        .max(15, "Must be 15 characters or less")
+        .min(3, "Must be 3 or more than 3 characters")
+        .required("*Required"),
+      lastName: Yup.string()
+        .max(20, "Must be 20 characters or less")
+        .required("*Required"),
+      email: Yup.string().email("Invalid email address").required("*Required"),
+    }),
+    onSubmit: (values) => {
+      sendEmail(data, values);
+    },
   });
 
   // For Controlling the page
@@ -26,12 +45,41 @@ const Contact = () => {
     setPage((prev) => prev - 1);
   };
   const nextPage = () => {
-    console.log("Next page clicked");
     if (page === 4) return;
     setPage((prev) => prev + 1);
   };
 
-  // For controlling the form state
+  // For sending the email
+  const sendEmail = (data, values) => {
+    let templateObject = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: values.email,
+      services: data.services,
+      methods: data.methods,
+    };
+    emailjs
+      .send(
+        "service_h3pdupm",
+        "template_g1mkpzw",
+        templateObject,
+        "user_szyt5JHMU8lnbkf7zN93S"
+      )
+      // .send(
+      //   process.env.NEXT_PUBLIC_EMALJS_SERVICEID,
+      //   process.env.NEXT_PUBLIC_EMALJS_TEMPLATEID,
+      //   templateObject,
+      //   process.env.NEXT_PUBLIC_EMALJS_USERID
+      // )
+      .then(
+        (result) => {
+          console.log("Mail Sent");
+        },
+        (error) => {
+          console.log("Could not send the mail");
+        }
+      );
+  };
 
   return (
     <div className="font-jugo font-medium text-gray-200 h-screen w-full bg-primary flex items-center justify-center">
@@ -67,30 +115,8 @@ const Contact = () => {
           {page === 2 && (
             <OnBoardingTwo data={data} setData={setData} nextPage={nextPage} />
           )}
-          {page === 3 && <OnBoardingThree />}
+          {page === 3 && <OnBoardingThree formik={formik} />}
         </div>
-
-        {/* Contact Footer */}
-        {/* <div className="absolute bottom-0 left-0  pt-4 pb-8 w-full flex items-center justify-center ">
-          {page === 3 && (
-            <button
-              className="flex items-center px-16  py-2
-             rounded-2xl  cursor-pointer font-semibold text-base lg:text-lg bg-blue-500   hover:bg-blue-400"
-            >
-              Send
-            </button>
-          )}
-
-          {page !== 3 && (
-            <button
-              className="flex items-center px-16  py-2
-             rounded-2xl  cursor-pointer font-semibold text-base lg:text-lg bg-blue-500   hover:bg-blue-400"
-              onClick={nextPage}
-            >
-              Next
-            </button>
-          )}
-        </div> */}
       </div>
     </div>
   );
