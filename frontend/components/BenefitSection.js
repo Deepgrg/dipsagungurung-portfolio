@@ -65,14 +65,24 @@ const BenefitSection = () => {
 
         {/* Item C */}
         <div className="col-span-4 lg:col-span-1 h-48 lg:h-auto  flex items-center justify-center rounded-3xl pixel-pattern border-gray-200 border-opacity-10 border">
-          <h4 className="text-3xl font-semibold px-6">
+          <h4 className="text-3xl font-semibold px-6 ">
             Pixel Perfect <br /> Development.
           </h4>
         </div>
 
         {/* Item D */}
-        <div className="bg-primary col-span-4 lg:col-span-3 flex items-center justify-center rounded-3xl h-96 border-gray-200 border-opacity-10 border">
-          <h4>Responsive Design</h4>
+        <div className="bg-primary col-span-4 lg:col-span-3  rounded-3xl border-gray-200 border-opacity-10 border relative">
+          <h4 className="absolute top-6 left-6 text-xl font-semibold hidden md:inline">
+            Responive Design
+          </h4>
+          <Image
+            src="/Responsive.png"
+            alt="Responsive website picture example"
+            layout="responsive"
+            height={100}
+            width={200}
+            className="object-cover object-bottom"
+          />
         </div>
 
         {/* Item E */}
@@ -97,8 +107,8 @@ const BenefitSection = () => {
           <div className="">
             <Image
               src="/Techs.png"
-              width={110}
-              height={50}
+              width={250}
+              height={120}
               alt="Technologies that I use"
               layout="responsive"
               className="object-cover object-bottom "
