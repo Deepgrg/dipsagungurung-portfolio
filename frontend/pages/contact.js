@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -8,6 +8,8 @@ import emailjs from "emailjs-com";
 import OnBoardingOne from "../components/OnBoardingOne";
 import OnBoardingTwo from "../components/OnBoardingTwo";
 import OnBoardingThree from "../components/OnBoardingThree";
+import LoadingSpinner from "../components/LoadingSpinner";
+import OnBoardingFour from "../components/OnBoardingFour";
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -16,6 +18,7 @@ const Contact = () => {
   });
 
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -45,7 +48,7 @@ const Contact = () => {
     setPage((prev) => prev - 1);
   };
   const nextPage = () => {
-    if (page === 4) return;
+    if (page === 5) return;
     setPage((prev) => prev + 1);
   };
 
@@ -58,25 +61,23 @@ const Contact = () => {
       services: data.services,
       methods: data.methods,
     };
+
+    setLoading(true);
     emailjs
       .send(
-        "service_h3pdupm",
-        "template_g1mkpzw",
+        process.env.NEXT_PUBLIC_EMALJS_SERVICEID,
+        process.env.NEXT_PUBLIC_EMALJS_TEMPLATEID,
         templateObject,
-        "user_szyt5JHMU8lnbkf7zN93S"
+        process.env.NEXT_PUBLIC_EMALJS_USERID
       )
-      // .send(
-      //   process.env.NEXT_PUBLIC_EMALJS_SERVICEID,
-      //   process.env.NEXT_PUBLIC_EMALJS_TEMPLATEID,
-      //   templateObject,
-      //   process.env.NEXT_PUBLIC_EMALJS_USERID
-      // )
       .then(
         (result) => {
-          console.log("Mail Sent");
+          setLoading(false);
+          nextPage();
         },
         (error) => {
-          console.log("Could not send the mail");
+          setLoading(false);
+          nextPage();
         }
       );
   };
@@ -89,7 +90,7 @@ const Contact = () => {
         <div
           className={`absolute top-0 left-0  py-4 px-4 w-full flex items-center border-b-2 border-gray-200 border-opacity-20 ${
             page === 1 ? "justify-end" : "justify-between"
-          } `}
+          } ${page === 4 ? "hidden" : ""} `}
         >
           {page !== 1 ? (
             <button
@@ -116,7 +117,12 @@ const Contact = () => {
             <OnBoardingTwo data={data} setData={setData} nextPage={nextPage} />
           )}
           {page === 3 && <OnBoardingThree formik={formik} />}
+          {page === 4 && <OnBoardingFour />}
         </div>
+
+        {/* Loading Spinner */}
+
+        {loading ? <LoadingSpinner /> : null}
       </div>
     </div>
   );
