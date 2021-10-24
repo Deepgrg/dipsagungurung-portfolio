@@ -30,7 +30,7 @@ const OnBoardingOne = (props) => {
     <div>
       <div className="flex flex-col justify-center mb-12 space-y-2">
         <p className="text-center  text-xl opacity-50 ">Services</p>
-        <p className="text-center text-4xl font-semibold">
+        <p className="text-center text-3xl md:text-4xl font-semibold">
           How can I help you?
         </p>
       </div>
@@ -38,9 +38,12 @@ const OnBoardingOne = (props) => {
       {/* Options */}
 
       <div className="py-4">
-        <form className="space-y-6">
-          <label htmlFor="Web-Development" className="cursor-pointer block">
-            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-96 cursor-pointer">
+        <form className="space-y-5 md:space-y-6">
+          <label
+            htmlFor="Web-Development"
+            className="cursor-pointer  flex items-center justify-center"
+          >
+            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-72  md:w-96 cursor-pointer">
               Web Development
               <input
                 type="checkbox"
@@ -53,8 +56,11 @@ const OnBoardingOne = (props) => {
               />
             </div>
           </label>
-          <label htmlFor="Web-Design" className="cursor-pointer block">
-            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-96 cursor-pointer">
+          <label
+            htmlFor="Web-Design"
+            className="cursor-pointer flex items-center justify-center"
+          >
+            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-72 md:w-96 cursor-pointer">
               Web Design
               <input
                 type="checkbox"
@@ -67,8 +73,11 @@ const OnBoardingOne = (props) => {
               />
             </div>
           </label>
-          <label htmlFor="Other" className="cursor-pointer block">
-            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-96 cursor-pointer">
+          <label
+            htmlFor="Other"
+            className="cursor-pointer flex items-center justify-center"
+          >
+            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-72 md:w-96 cursor-pointer">
               Other
               <input
                 type="checkbox"

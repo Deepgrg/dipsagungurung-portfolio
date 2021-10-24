@@ -2,17 +2,17 @@ import Link from "next/link";
 
 const OnBoardingFour = () => {
   return (
-    <div>
-      <div className="flex flex-col justify-center mb-12 space-y-2">
+    <div className="w-5/6">
+      <div className="flex flex-col justify-center mb-12 space-y-2 ">
         <p className="text-center  text-xl opacity-50 ">Confirmation</p>
-        <p className="text-center text-4xl font-semibold">
+        <p className="text-center text-3xl md:text-4xl font-semibold">
           Thank you for your request.
         </p>
         <p className="text-center  text-base opacity-90 pt-5">
-          I will be in touch as soon as possible. It can take upto <br /> five
-          business days at most.
+          I will be in touch as soon as possible. It can take{" "}
+          <br className="hidden md:inline" /> upto five business days at most.
         </p>
-        <div>
+        <div className="md:pr-32">
           <p className="text-right text-base opacity-90">Best Regards</p>
           <p className="text-right text-base opacity-90">Dip</p>
         </div>

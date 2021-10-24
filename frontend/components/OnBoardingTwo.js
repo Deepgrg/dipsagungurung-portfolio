@@ -30,7 +30,7 @@ const OnBoardingTwo = (props) => {
     <div>
       <div className="flex flex-col justify-center mb-12 space-y-2">
         <p className="text-center  text-xl opacity-50 ">Methods</p>
-        <p className="text-center text-4xl font-semibold">
+        <p className="text-center text-3xl md:text-4xl  font-semibold">
           How would you like to <br /> work with me?
         </p>
       </div>
@@ -38,9 +38,12 @@ const OnBoardingTwo = (props) => {
       {/* Options */}
 
       <div className="py-4">
-        <form className="space-y-6">
-          <label htmlFor="One-Time-Project" className="cursor-pointer block">
-            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-96 cursor-pointer">
+        <form className="space-y-5 md:space-y-6">
+          <label
+            htmlFor="One-Time-Project"
+            className="cursor-pointer flex items-center justify-center"
+          >
+            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-72  md:w-96 cursor-pointer">
               One Time Project
               <input
                 type="checkbox"
@@ -53,8 +56,11 @@ const OnBoardingTwo = (props) => {
               />
             </div>
           </label>
-          <label htmlFor="Long-Term-Project" className="cursor-pointer block">
-            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-96 cursor-pointer">
+          <label
+            htmlFor="Long-Term-Project"
+            className="cursor-pointer flex items-center justify-center"
+          >
+            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-72  md:w-96 cursor-pointer">
               Long Term Project
               <input
                 type="checkbox"
@@ -67,8 +73,11 @@ const OnBoardingTwo = (props) => {
               />
             </div>
           </label>
-          <label htmlFor="Other" className="cursor-pointer block">
-            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-96 cursor-pointer">
+          <label
+            htmlFor="Other"
+            className="cursor-pointer flex items-center justify-center"
+          >
+            <div className="border-2 border-gray-200 border-opacity-10 rounded-2xl bg-primary px-8 py-5 flex items-center justify-between w-72  md:w-96 cursor-pointer">
               Other
               <input
                 type="checkbox"
